@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio en Vivo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .player-card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .radio-icon {
+            width: 80px;
+            height: 80px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .radio-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #ffffff;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .status {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: #38bdf8;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: #334155;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-card">
+        <div class="radio-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9zm0 2a7 7 0 0 1 7 7v1H5v-1a7 7 0 0 1 7-7zm-5 10h10v4H7v-4z"/>
+            </svg>
+        </div>
+        
+        <h1>Radio en Vivo</h1>
+        <span class="status">Transmitiendo audio online</span>
+
+        <audio controls preload="none">
+            <!-- Se elimina el punto y coma final para evitar la descarga forzada -->
+            <source src="https://stream.radiosenpy.net/8066/stream" type="audio/mpeg">
+            <source src="https://stream.radiosenpy.net/8066/" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio HTML5.
+        </audio>
+
+        <div class="footer-text">
+            Reproductor de Radio Web
+        </div>
+    </div>
+
+</body>
+</html>
